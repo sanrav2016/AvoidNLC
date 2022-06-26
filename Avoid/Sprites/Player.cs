@@ -43,7 +43,7 @@ namespace Avoid.Sprites
             shieldBubbleImage = content.Load<Texture2D>("images/shield_bubble");
         }
 
-        // In Update, take input from the keyboard and gamepad (the gamepad takes precedence)
+        // In Update, take input from the keyboard and gamepad
         // Use this to slowly move from one orbit ring to the next or the previous
         public void Update(GameTime gameTime, KeyboardStateExtended keyState, GamePadState gamePadState)
         {
