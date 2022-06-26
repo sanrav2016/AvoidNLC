@@ -57,6 +57,7 @@ namespace Avoid.States
             instructionsButton = new Button(game, "How to Play", new Vector2(950, 825), false, true);
             instructionsButton.LoadContent(content);
             game.levelManager.LoadContent(content);
+            GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
         }
 
         // Assign functionality to all the different on screen buttons

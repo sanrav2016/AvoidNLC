@@ -60,7 +60,7 @@ namespace Avoid.Sprites
                         {
                             on = true;
                             // If the user has a gamepad, they will feel it vibrate when the void is on!
-                            GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
+                            GamePad.SetVibration(PlayerIndex.One, 0.75f, 0.75f);
                         }
                     }
                     counter = 0;

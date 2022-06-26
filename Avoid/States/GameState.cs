@@ -183,6 +183,7 @@ namespace Avoid.States
             {
                 if (!slept)
                 {
+                    GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
                     slept = true;
                     MediaPlayer.Stop();
                     Thread.Sleep(1000);
@@ -381,6 +382,7 @@ namespace Avoid.States
                     winMusicPlaying = true;
                     MediaPlayer.Play(winSoundEffect);
                     MediaPlayer.IsRepeating = false;
+                    GamePad.SetVibration(PlayerIndex.One, 0f, 0f);
                 }
                 player.playerSpriteSheet.UpdateFrame();
             }
