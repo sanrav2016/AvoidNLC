@@ -1,9 +1,5 @@
 # Avoid
-<<<<<<< HEAD
-Avoid is a game created for the 2022-23 FBLA Computer Game & Simulation Programming event. Download the solution and run `Avoid/Program.cs` to start the game. Alternatively, open `Avoid/publish/`, unzip the correct folder for your system (Windows, Linux, or MacOS), and run the `Avoid.exe` file in that folder. Remember that you will have to download *all* the project files if the game is to run correctly. 
-=======
-Avoid is a game created for the 2022-23 FBLA Computer Game & Simulation Programming event. Download the solution and run `Avoid/Program.cs` to start the game. Alternatively, open `publish/`, unzip the correct folder for your system (Windows, Linux, or MacOS), and run the `Avoid.exe` file in that folder. Remember that you will have to download *all* the project files if the game is to run correctly. 
->>>>>>> Updated README
+Avoid is a game created for the 2022-23 FBLA Computer Game & Simulation Programming event. Download the solution and run `Avoid/Program.cs` to start the game. Alternatively, open `Avoid/publish/`, unzip the correct folder for your system (Windows, Linux, or MacOS), and run the `Avoid.exe` file in that folder. Remember that you will have to download *all* the project files if the game is to run correctly.
 
 ## Premise
 Welcome to Avoid! In this game, you are a rocket trying to escape the inexorable reaches of a black hole, all while dodging obstacles and a giant laser! There is a demo level and five main levels, along with a secret level...
