@@ -140,7 +140,7 @@ namespace Avoid.States
                         float timeSpan = (float)gameTime.TotalGameTime.TotalMilliseconds - gameStartTime;
                         float l = 0.1f * (float)Math.Sin((float)timeSpan / 1000) + 0.7f;
                         if (timeSpan > 1000 && timeSpan < 8000)
-                            spriteBatch.Draw(arrows, new Vector2(960, 700) - (l * new Vector2(400, 400)) / 2, null, Color.White, 0, Vector2.Zero, new Vector2(l, l), SpriteEffects.None, 0f);
+                            spriteBatch.Draw(arrows, new Vector2(960, 700) - (l * new Vector2(800, 400)) / 2, null, Color.White, 0, Vector2.Zero, new Vector2(l, l), SpriteEffects.None, 0f);
                         if (timeSpan > 48000 && timeSpan < 60000 && !gameWon)
                         {
                             spriteBatch.Draw(spaceBar, new Vector2(960, 700) - (l * new Vector2(800, 200)) / 2, null, Color.White, 0, Vector2.Zero, new Vector2(l, l), SpriteEffects.None, 0f);
