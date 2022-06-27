@@ -131,6 +131,8 @@ namespace Avoid
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Escape))
                 Exit();
+            if (prevKeyState.IsKeyDown(Keys.LeftAlt) && keyState.IsKeyUp(Keys.Enter) && prevKeyState.IsKeyDown(Keys.Enter))
+                graphics.ToggleFullScreen();
             // Check if gamepad is connected
             GamePadCapabilities capabilities = GamePad.GetCapabilities(PlayerIndex.One);
             if (capabilities.IsConnected)
