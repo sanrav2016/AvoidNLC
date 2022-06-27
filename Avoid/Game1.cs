@@ -90,7 +90,7 @@ namespace Avoid
             graphics.PreferredBackBufferWidth = width;
             graphics.PreferredBackBufferHeight = height;
             // Full screen for a more immersive experience!
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             graphics.ApplyChanges();
         }
 

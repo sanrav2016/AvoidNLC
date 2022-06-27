@@ -99,9 +99,9 @@ namespace Avoid.States
             bool upArrowClick = hoverUpArrow && mouseState.WasButtonJustUp(MouseButton.Left);
             hoverDownArrow = new Rectangle(160, 580, 540, 300).Contains(mousePosition);
             bool downArrowClick = hoverDownArrow && mouseState.WasButtonJustUp(MouseButton.Left);
-            if (showUpArrow && (upArrowClick || (game.gamePadState.DPad.Up == ButtonState.Pressed && game.prevGamePadState.DPad.Up == ButtonState.Released)))
+            if (showUpArrow && (upArrowClick || (game.gamePadState.ThumbSticks.Left.Y > 0.5f && game.prevGamePadState.ThumbSticks.Left.Y <= 0.5f)))
                 currentLevelId -= 1;
-            if (showDownArrow && (downArrowClick || (game.gamePadState.DPad.Down == ButtonState.Pressed && game.prevGamePadState.DPad.Down == ButtonState.Released)))
+            if (showDownArrow && (downArrowClick || (game.gamePadState.ThumbSticks.Left.Y < -0.5f && game.prevGamePadState.ThumbSticks.Left.Y >= -0.5f)))
                 currentLevelId += 1;
         }
 
