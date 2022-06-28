@@ -28,6 +28,7 @@ namespace Avoid.States
         private Button menuButton;
         private Button tryAgainButton;
         private Texture2D voidCircle;
+        private Texture2D aIcon;
         private Vector2 voidCirclePosition = new Vector2(710, 290);
         private HealthBar healthBar;
         private BlastBar blastBar;
@@ -200,6 +201,8 @@ namespace Avoid.States
                 stringSize = game.ArcadePI30.MeasureString(consolationMessage);
                 spriteBatch.DrawString(game.ArcadePI30, consolationMessage, new Vector2(960, 690) - stringSize / 2, Color.Gray);
                 tryAgainButton.Draw(spriteBatch);
+                if (game.gamePadState.IsConnected)
+                    spriteBatch.Draw(aIcon, new Vector2(1390, 800), Color.White);
             }
             // Always keep the menu button at the top left
             menuButton.Draw(spriteBatch);
@@ -237,6 +240,7 @@ namespace Avoid.States
             smallCircle = content.Load<Texture2D>("images/small_circle");
             arrows = content.Load<Texture2D>("images/up_down_arrows");
             spaceBar = content.Load<Texture2D>("images/space_bar");
+            aIcon = content.Load<Texture2D>("images/a_icon");
             celebratoryMessage = celebratoryMessages[rand.Next(celebratoryMessages.Length)];
             // Hint at how to get to the secret level if the player has completed the fifth level
             if (origLevel.id == 5)
@@ -277,10 +281,6 @@ namespace Avoid.States
                     gameStartTime = (float)gameTime.TotalGameTime.TotalMilliseconds;
                 }
                 return;
-            }
-            if (game.gamePadState.IsConnected)
-            {
-                tryAgainButton.text = "Try Again (A)";
             }
             if (!introInProgress && !musicPlaying)
             {

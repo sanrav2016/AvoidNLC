@@ -15,7 +15,7 @@ namespace Avoid.States
 {
     class Menu : State
     {
-
+        private Texture2D menuControlsIcons;
         private Song backgroundMusic, ding;
         private Texture2D backgroundImage;
         private Texture2D titleImage;
@@ -42,10 +42,13 @@ namespace Avoid.States
             instructionsButton.Draw(spriteBatch);
             spriteBatch.DrawString(game.ArcadePI30, "a game by Sanjay R", new Vector2(170, 970), Color.Gray);
             game.levelManager.Draw(gameTime, spriteBatch);
+            if (game.gamePadState.IsConnected)
+                spriteBatch.Draw(menuControlsIcons, new Vector2(1680, 475), Color.White);
         }
 
         public override void LoadContent()
         {
+            menuControlsIcons = content.Load<Texture2D>("images/menu_controls_icons");
             backgroundMusic = content.Load<Song>("audio/lobby");
             ding = content.Load<Song>("audio/ding");
             backgroundImage = content.Load<Texture2D>("images/background2");
@@ -66,12 +69,6 @@ namespace Avoid.States
             if (menuStartTime == -1)
                 menuStartTime = (float)gameTime.TotalGameTime.TotalMilliseconds;
             // If a gamepad has been connected, add instructions for how to select on screen buttons to the button text
-            if (game.gamePadState.IsConnected)
-            {
-                playButton.text = "Start (A)";
-                leaderboardButton.text = "Leaderboard (X)";
-                instructionsButton.text = "How to Play (Y)";
-            }
             if (playButton.Clicked() || game.gamePadState.IsButtonDown(Buttons.A))
             {
                 MediaPlayer.Play(ding);
